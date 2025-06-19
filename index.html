@@ -22,11 +22,40 @@
       <button class="bot02"><a href="./description/acuario.html">Acuario</a></button>
      <button class="bot02"><a href="./description/piscis.html">Piscis</a></button>     
     </div>
-    <div class="caja01">
+    <div class="cajapadre">
       <img class="img01" src="./img/los12.png" alt="" />
-      <div class="tarjeta01">
-      <h2>Los 12 caballeros de oro</h2>
-      <p>También conocidos como los Caballeros Dorados, Santos de Oro o Santos Dorados, estos personajes son los guerreros élite pertenecientes al ejército de Athena, siendo un rango superior a los Caballeros de Plata y Bronce, y estos son los que se encargan de proteger los 12 templos del Zodíaco.</p>
-        </div>
+
+    </div>
+    <div class="caja01">
+  <div class="tarjeta01">
+    <h2>Los 12 caballeros de oro</h2>
+    <p>También conocidos como los Caballeros Dorados, Santos de Oro o Santos Dorados, estos personajes son los guerreros élite pertenecientes al ejército de Athena, siendo un rango superior a los Caballeros de Plata y Bronce, y estos son los que se encargan de proteger los 12 templos del Zodíaco.</p>
+    <label for="logoInput" class="logo-btn">Agregar logo</label>
+    <input type="file" id="logoInput" accept="image/*" style="display:none;" />
+    <div id="logoPreview" class="logo-preview"></div>
+  </div>
+</div>
+<script>
+  const input = document.getElementById('logoInput');
+  const preview = document.getElementById('logoPreview');
+
+  // Mostrar logo guardado al cargar la página
+  const savedLogo = localStorage.getItem('logoImg');
+  if (savedLogo) {
+    preview.innerHTML = `<img src="${savedLogo}" alt="Logo" class="logo-img">`;
+  }
+
+  input.addEventListener('change', function(e) {
+    if (e.target.files && e.target.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function(ev) {
+        preview.innerHTML = `<img src="${ev.target.result}" alt="Logo" class="logo-img">`;
+        // Guardar en localStorage
+        localStorage.setItem('logoImg', ev.target.result);
+      }
+      reader.readAsDataURL(e.target.files[0]);
+    }
+  });
+</script>
   </body>
 </html>
