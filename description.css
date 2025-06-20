@@ -1,37 +1,61 @@
 body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
-box-sizing: border-box;
-scrollbar-width: none;
+  box-sizing: border-box;
+  scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
 body::-webkit-scrollbar {
   display: none;
-  /* Chrome, Safari y Opera */
 }
 
 .body-fondo {
-  background-image: url("./img/armaduras/fondo04.jpg");
+  background-image: url("../img/armaduras/fondo04.jpg");
   background-size: cover;
- 
+  background-position: center;
+  min-height: 100vh;
+  width: 100vw;
 }
 
 .contenedor_info {
-  width: 100%;
-  height: 430px;
+  width: 90vw;
+  max-width: 900px;
+  min-height: 350px;
+  margin: 40px auto 0 auto;
   display: flex;
   justify-content: center;
-  
-
+  align-items: center;
+  background: rgba(0,0,0,0.6);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+  gap: 24px;
+  padding: 24px;
 }
 
-.imagen_caballero  {
-   width: 50%;
-  height: 100%;
+
+.imagen_caballero {
+  width: 500px;
+  height: 380px;
+  object-fit: cover;
   border: 5px solid gold;
-  border-radius: 10px;
-  
-  
+  border-radius: 12px;
+  background: #222;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.armadura_info {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 16px;
+  display: block;
+  margin: 20px auto 0 auto;
+  background: #fff;
+  border: 2px solid gold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 body::-webkit-scrollbar {
@@ -39,79 +63,78 @@ body::-webkit-scrollbar {
   /* Chrome, Safari y Opera */
 }
 .info_caballeros {
-  
-  width: 50%;
-  height: 100%;
-  margin-left: 5px;
-  border: 5px solid gold;
-  overflow-y: scroll;
-  border-radius: 10px;
-  scrollbar-width: none;
-    /* Firefox */
-    -ms-overflow-style: none;
-    /* IE y Edge */
-
-}
-
-.info_caballeros h2 {
-  text-align: center;
+  flex: 1;
   color: white;
-  font-weight: 1200;
-
+  padding: 16px 24px;
+  border: 3px solid gold;
+  border-radius: 12px;
+  background: rgba(20,20,40,0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 220px;
+  max-width: 400px;
+  box-sizing: border-box;
 }
 
 .info_caballeros p {
   text-align: center;
-  font-size: 100%;
+  font-size: 1.1em;
   color: white;
+  margin-bottom: 10px;
 }
-
-.info_caballeros h3 {
-  margin-left: 2px;
+.info_caballeros h2 {
+  text-align: center;
   color: white;
   font-weight: 900;
-
+  margin-bottom: 12px;
+}
+.info_caballeros h3 {
+  margin: 10px 0 5px 0;
+  color: gold;
+  font-weight: 700;
 }
 
 .info_caballeros ul {
-  font-size: 90%;
+  font-size: 1em;
   color: white;
+  margin: 0 0 10px 0;
+  padding-left: 20px;
+  text-align: left;
+  align-self: flex-start;
 }
 
 .boton_contenedor {
-  margin-top: 20px;
+  margin: 30px auto 0 auto;
   text-align: center;
-  
-  
-
-  }
-
-  .boton_contenedor a {
-    color: white;
-    text-decoration: none;
-    font-weight: 800;
-    
-    
-  }
-
-  .boton_volver {
-    border-radius: 5px;
-    background-image: url("/img/armaduras/fondo04.jpg");
-  transition: transform 1s ;
-
-  }
-
-  .boton_volver:hover {
-    transform: scale(1.5);
-
-  }
-
-
-.armadura_info {
-  width: 170px;
-  height: 170px;
-  position: sticky;
-  left: 450px;
-  border-radius: 29px;
 }
 
+.boton_contenedor a {
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.boton_volver {
+  border-radius: 8px;
+  background: gold;
+  color: #222;
+  font-weight: bold;
+  padding: 10px 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  transition: transform 0.2s, background 0.2s;
+  margin-top: 16px;
+}
+
+.boton_volver:hover {
+  transform: scale(1.1);
+  background: #ffe066;
+}
+
+.boton_volver a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+}

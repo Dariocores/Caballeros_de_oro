@@ -1,32 +1,23 @@
-.body {
+body {
   display: flex;
   background-size: cover;
   background-image: url("./img/constelaciones02.jpg");
   color: white;
   justify-content: center;
   flex-wrap: wrap;
-  
 }
 
 .caja01 {
   width: 60%;
-    /* Ajusta el ancho según prefieras */
-    margin: 30px auto;
-    /* Centra horizontalmente y agrega margen superior/inferior */
+  margin: 30px auto;
   display: flex;
   flex-direction: row;
-    /* O column, según tu diseño */
-    align-items: center;
-    /* Centra verticalmente el contenido interno si usas flex */
-    justify-content: center;
-    background-image: url("./img/constelaciones02.jpg");
-    /* Opcional: color de fondo */
-    border-radius: 12px;
-    /* Opcional: bordes redondeados */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    /* Opcional: sombra */
-    padding: 20px;
-    /* Opcional: espacio interno */
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
 .img01 {
@@ -34,7 +25,6 @@
   height: 450px;
   clip-path: circle(50% at 50% 50%);
   margin-top: 10px;
-  
 }
 
 .fondo-div1 {
@@ -47,7 +37,7 @@
   height: 100%;
 }
 
-.bot01 {
+[class^="bot"], [class*=" bot"] {
   width: 80px;
   height: 50px;
   border-radius: 10px;
@@ -56,99 +46,9 @@
   background-image: url("./img/constelaciones02.jpg");
 }
 
-.bot02 {
-  width: 80px;
-  height: 50px;
-  border-radius: 10px;
-  cursor: pointer;
-  color: white;
-  background-image: url("./img/constelaciones02.jpg");
-}
 .bot02 a {
   text-decoration: none;
   color: white;
-}
-
-.bot03 {
-  width: 80px;
-  height: 50px;
-  border-radius: 10px;
-  cursor: pointer;
-  color: white;
-  background-image: url("./img/constelaciones02.jpg");
-}
-.bot04 {
-  width: 80px;
-  height: 50px;
-  border-radius: 10px;
-  cursor: pointer;
-  color: white;
-  background-image: url("./img/constelaciones02.jpg");
-}
-
-.bot05 {
-  width: 80px;
-  height: 50px;
-  border-radius: 10px;
-  cursor: pointer;
-  color: white;
-  background-image: url("./img/constelaciones02.jpg");
-}
-.bot06 {
-  width: 80px;
-  height: 50px;
-  border-radius: 10px;
-  cursor: pointer;
-  color: white;
-  background-image: url("./img/constelaciones02.jpg");
-}
-.bot07 {
-  width: 80px;
-  height: 50px;
-  border-radius: 10px;
-  cursor: pointer;
-  color: white;
-  background-image: url("./img/constelaciones02.jpg");
-}
-.bot08 {
-  width: 80px;
-  height: 50px;
-  border-radius: 10px;
-  cursor: pointer;
-  color: white;
-  background-image: url("./img/constelaciones02.jpg");
-}
-.bot09 {
-  width: 80px;
-  height: 50px;
-  border-radius: 10px;
-  cursor: pointer;
-  color: white;
-  background-image: url("./img/constelaciones02.jpg");
-}
-.bot10 {
-  width: 80px;
-  height: 50px;
-  border-radius: 10px;
-  cursor: pointer;
-  color: white;
-  background-image: url("./img/constelaciones02.jpg");
-}
-.bot11 {
-  width: 80px;
-  height: 50px;
-  border-radius: 10px;
-  cursor: pointer;
-  color: white;
-  background-image: url("./img/constelaciones02.jpg");
-}
-.bot12 {
-  width: 80px;
-  height: 50px;
-  border-radius: 10px;
-  cursor: pointer;
-  color: white;
-  background-image: url("./img/constelaciones02.jpg");
 }
 
 .tarjeta01 {
