@@ -5,6 +5,7 @@ body {
   color: white;
   justify-content: center;
   flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 .caja01 {
@@ -91,4 +92,39 @@ body {
 
 .logo-btn:hover {
   background: #ffe066;
+}
+
+@media (max-width: 900px) {
+  .caja01, .tarjeta01 {
+    flex-direction: column;
+    width: 98vw;
+    max-width: 98vw;
+    padding: 10px;
+  }
+  .img01 {
+    width: 90vw;
+    height: auto;
+    max-width: 350px;
+  }
+  .fondo-div1 {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  .caja01, .tarjeta01 {
+    width: 100vw;
+    padding: 4px;
+  }
+  .img01 {
+    width: 98vw;
+    max-width: 180px;
+    height: auto;
+  }
+  .bot02 {
+    width: 90vw;
+    min-width: 120px;
+    font-size: 1em;
+  }
 }

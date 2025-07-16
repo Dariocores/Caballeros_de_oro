@@ -8,6 +8,10 @@ body {
   -ms-overflow-style: none;
 }
 
+body, .body-fondo, * {
+  box-sizing: border-box;
+}
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -33,6 +37,22 @@ body::-webkit-scrollbar {
   box-shadow: 0 4px 24px rgba(0,0,0,0.2);
   gap: 24px;
   padding: 24px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.contenedor_info:hover, .info_caballeros:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+  transform: translateY(-4px) scale(1.01);
 }
 
 
@@ -44,6 +64,12 @@ body::-webkit-scrollbar {
   border-radius: 12px;
   background: #222;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.imagen_caballero:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 24px 6px gold, 0 8px 32px rgba(255,215,0,0.25);
+  border-color: #fff700;
 }
 
 .armadura_info {
@@ -56,6 +82,52 @@ body::-webkit-scrollbar {
   background: #fff;
   border: 2px solid gold;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 900px) {
+  .contenedor_info {
+    flex-direction: column;
+    max-width: 98vw;
+    padding: 12px;
+    gap: 12px;
+  }
+  .imagen_caballero {
+    width: 90vw;
+    max-width: 350px;
+    height: auto;
+    margin: 0 auto;
+  }
+  .info_caballeros {
+    max-width: 98vw;
+    min-width: unset;
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contenedor_info {
+    padding: 4px;
+    gap: 6px;
+  }
+  .imagen_caballero {
+    width: 98vw;
+    max-width: 220px;
+    height: auto;
+  }
+  .info_caballeros {
+    padding: 6px;
+    font-size: 0.95em;
+  }
+  .armadura_info {
+    width: 80px;
+    height: 80px;
+  }
+  .boton_volver {
+    width: 90vw;
+    font-size: 1em;
+    padding: 8px 0;
+  }
 }
 
 body::-webkit-scrollbar {
@@ -88,6 +160,20 @@ body::-webkit-scrollbar {
   color: white;
   font-weight: 900;
   margin-bottom: 12px;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: fadeInTitle 1s 0.3s ease-out forwards;
+}
+@keyframes fadeInTitle {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.info_caballeros h3 {
+  margin: 10px 0 5px 0;
+  color: gold;
+  font-weight: 700;
 }
 .info_caballeros h3 {
   margin: 10px 0 5px 0;
@@ -102,7 +188,33 @@ body::-webkit-scrollbar {
   padding-left: 20px;
   text-align: left;
   align-self: flex-start;
+  opacity: 0;
+  animation: fadeInList 1s 0.7s ease-out forwards;
 }
+@keyframes fadeInList {
+  to {
+    opacity: 1;
+  }
+}
+
+.info_caballeros ul li {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: fadeInListItem 0.6s ease-out forwards;
+}
+.info_caballeros ul li:nth-child(1) { animation-delay: 1.0s; }
+.info_caballeros ul li:nth-child(2) { animation-delay: 1.2s; }
+.info_caballeros ul li:nth-child(3) { animation-delay: 1.4s; }
+.info_caballeros ul li:nth-child(4) { animation-delay: 1.6s; }
+.info_caballeros ul li:nth-child(5) { animation-delay: 1.8s; }
+
+@keyframes fadeInListItem {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 
 .boton_contenedor {
   margin: 30px auto 0 auto;
@@ -128,9 +240,37 @@ body::-webkit-scrollbar {
   margin-top: 16px;
 }
 
+.boton_volver:focus, .boton_volver a:focus {
+  outline: 2px solid #ffd700;
+  outline-offset: 2px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background: rgba(0,0,0,0.7);
+  color: #ffd700;
+  text-align: center;
+  font-size: 0.9em;
+  padding: 6px 0;
+  z-index: 100;
+  letter-spacing: 1px;
+}
+
 .boton_volver:hover {
-  transform: scale(1.1);
+  animation: heartbeat 0.5s;
   background: #ffe066;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  20% { transform: scale(1.1); }
+  40% { transform: scale(0.95); }
+  60% { transform: scale(1.05); }
+  80% { transform: scale(0.97); }
+  100% { transform: scale(1); }
 }
 
 .boton_volver a {
